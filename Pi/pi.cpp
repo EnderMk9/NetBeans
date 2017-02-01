@@ -20,7 +20,7 @@ int main() {
     sum = 0;
     while (times > 0)
     {
-        cout.precision(500000);
+        cout.precision(50000000);
         a1 = 1 / pow(n,2) ; //Calculamos 1 término
         //cout << "a1 " << a1 << endl;
         n = n+1; //Sumamos 1 a n 
