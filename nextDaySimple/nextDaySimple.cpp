@@ -19,6 +19,7 @@ string anno2;
 string anno4;
 string anno5;
 bool bisiesto;
+bool wrong;
 int main() {
     cout << "Introduzca la fecha en este formato ´DD-MM-AAAA´" << endl;
     cin >> fecha;
@@ -57,7 +58,7 @@ int main() {
     };
     if (meses > 12)
     {
-        cout << "fecha incorrecta";
+        wrong = true;
     }
     else
     {
@@ -67,14 +68,14 @@ int main() {
             {
                 if (dias > 31)
                     {
-                        cout << "fecha incorrecta";
+                        wrong = true;
                     }
             }
             else
             {
              if (dias > 30)
                {
-                cout << "fecha incorrecta";
+                wrong = true;
                 };
              if (meses == 02) // Febrero
              {
@@ -82,14 +83,14 @@ int main() {
                 {
                     if (dias > 29)
                     {
-                        cout << "fecha incorrecta";
+                        wrong = true;
                     }
                 }
                 else 
                     {
                     if (dias > 28)
                     {
-                    cout << "fecha incorrecta";
+                    wrong = true;
                     };
                 };
             };
@@ -99,10 +100,16 @@ int main() {
         {
             if (dias > 31)
             {
-            cout << "fecha incorrecta";
+            wrong = true;
             }; 
         };
     };
+    if (wrong == 1)
+    {
+        cout << "Fecha incorrecta";
+    }
+    else
+    {  
     if (dias == 31 && meses == 12)
     {
         annos = annos+1;
@@ -111,26 +118,80 @@ int main() {
     }
     else
     {
-        if (dias == 29 && meses == 2 && bisiesto == 1)
+
+        if (meses % 2 == 0) // meses pares
         {
-            dias = 1;
-            meses = meses +1;
+            if (meses == 12 || meses == 10 || meses == 8)
+            {
+                if (dias == 31)
+                    {
+                    dias = 1;
+                    meses = meses +1;
+                    };
+            }
+            else
+            {
+              if (meses == 02) // Febrero
+             {
+                if (bisiesto == 1)
+                {
+                    if (dias == 29)
+                    {
+                        dias = 1;
+                        meses = meses +1;
+                    }
+                    else
+                         {
+                              dias = dias+1;
+                          };
+                }
+                else 
+                    {
+                    if (dias == 28)
+                    {
+                        dias = 1;
+                        meses = meses +1;
+                    }
+                     else
+                         {
+                              dias = dias+1;
+                          };
+                };
+            }
+              else
+              {
+             if (dias == 30)
+               {
+                    dias = 1;
+                    meses = meses +1;
+                }
+                     else
+                   {
+                       dias = dias+1;
+                     };
+            };
+
+            };
         }
         else
         {
-        if (dias == 31)
+        if (meses % 2 != 0)
         {
-            meses = meses+1;
-            dias = 1;
-        }
-        else
-        {
-            dias = dias+1;
+            if (dias == 31)
+            {
+                meses = meses +1;
+                dias = 1;
+            }
+            else
+            {
+                dias = dias +1;
+            };
         };
         };
-    };
+
     cout << "La fecha es: " << dias << "-" << meses << "-" << annos <<endl;
     cin.get();
     return 0;
 }
-
+};
+}
