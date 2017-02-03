@@ -84,10 +84,13 @@ int main() {
                     {
                         cout << "fecha incorrecta";
                     }
-                };
-                if (dias > 28)
-                {
-                cout << "fecha incorrecta";
+                }
+                else 
+                    {
+                    if (dias > 28)
+                    {
+                    cout << "fecha incorrecta";
+                    };
                 };
             };
             };
@@ -108,6 +111,13 @@ int main() {
     }
     else
     {
+        if (dias == 29 && meses == 2 && bisiesto == 1)
+        {
+            dias = 1;
+            meses = meses +1;
+        }
+        else
+        {
         if (dias == 31)
         {
             meses = meses+1;
@@ -117,8 +127,10 @@ int main() {
         {
             dias = dias+1;
         };
+        };
     };
     cout << "La fecha es: " << dias << "-" << meses << "-" << annos <<endl;
+    cin.get();
     return 0;
 }
 
