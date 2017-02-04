@@ -6,7 +6,7 @@ float radio;
 float lon;
 float area;
 float volumen;
-const float pi  = 3.1416;
+const float pi = 3.1416;
 
 int main() {
     cout << "Introduce el radio:" << endl;
