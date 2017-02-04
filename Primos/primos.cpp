@@ -2,8 +2,8 @@
 #include <cstdlib>
 
 using namespace std;
-int n;
-int n2;
+long long int n;
+long long int n2;
 bool primo;
 
 int main() {
