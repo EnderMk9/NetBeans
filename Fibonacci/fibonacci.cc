@@ -4,6 +4,7 @@ using namespace std;
 long long int an;
 long long int ann;
 int num;
+
 int main() {
     cout << "Número de repeticiones:" << endl;
     cin >> num;
@@ -16,13 +17,12 @@ int main() {
     ann = an + ann;
     cout << an << endl;
     cout << ann << endl;
-    while (num > 0)
-    {
-    an = ann + an;
-    ann = an + ann;
-    cout << an << endl;
-    cout << ann << endl;
-    num = num-1;
+    while (num > 0) {
+        an = ann + an;
+        ann = an + ann;
+        cout << an << endl;
+        cout << ann << endl;
+        num = num - 1;
     }
     return 0;
 }
