@@ -9,31 +9,21 @@ bool bisiesto;
 int main() {
     cout << "Introduzca el año." << endl;
     cin >> anno;
-    if (anno % 4 == 0)
-    {
-        if (anno % 100 == 0)
-        {
+    if (anno % 4 == 0) {
+        if (anno % 100 == 0) {
             bisiesto = false;
-        }
-        else
-        {
+        } else {
             bisiesto = true;
         };
-        if (anno % 400 == 0)
-        {
+        if (anno % 400 == 0) {
             bisiesto = true;
         };
-    }
-    else
-    {
+    } else {
         bisiesto = false;
     };
-    if (bisiesto == 1)
-    {
+    if (bisiesto == 1) {
         cout << "El año " << anno << " es bisiesto" << endl;
-    }
-    else
-    {
+    } else {
         cout << "El año " << anno << " no es bisiesto" << endl;
     };
     cin.get();
