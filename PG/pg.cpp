@@ -7,8 +7,7 @@ int num;
 int an;
 int ann;
 
-int main()
-{
+int main() {
     cout << "Introduce el primer término" << endl;
     cin >> a1;
     cout << "Introduce la razón" << endl;
@@ -17,17 +16,16 @@ int main()
     cin >> num;
     cout << "Progresión Geométrica" << endl;
     cout << a1 << endl;
-    num = num-1;
+    num = num - 1;
     an = a1 * r;
     cout << an << endl;
-    while (num > 0)
-    {
-       ann = an * r;
-       an = ann * r;
-       cout << ann << endl;
-       cout << an << endl;
-       num = num-1;
-       
+    while (num > 0) {
+        ann = an * r;
+        an = ann * r;
+        cout << ann << endl;
+        cout << an << endl;
+        num = num - 1;
+
     };
-	return 0;
+    return 0;
 }
